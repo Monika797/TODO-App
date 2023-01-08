@@ -1,0 +1,192 @@
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa&family=Kaushan+Script&family=Oswald&family=Mukta&display=swap");
+
+/* UNIVERSAL SELECTOR */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* DIFFERENT COLORS TO TOGGLE BETWEEN DARK AND LIGHT THEME */
+body {
+  --accent-color: rgb(229, 10, 83);
+  --accent-variant: rgb(238, 196, 202);
+  --secondary-color: #f17695;
+  --secondary-variant: #e4a3b4;
+  --background-color: rgb(255, 210, 106);
+  --background-variant: rgb(173, 169, 169);
+  --nav-color: rgb(241, 172, 202);
+  --text-color: rgb(33, 30, 30);
+  --btn-text-color: var(--background-color);
+  --transition-delay: 1s;
+
+  background-color: var(--background-color);
+
+  color: var(--text-color);
+  transition: var(--transition-delay);
+  --box-shadow: 0 5px 20px 1px rgba(0, 0, 0, 0.3);
+}
+
+body.dark {
+  --accent-color: #d0d066;
+  --accent-variant: #d2d2a6;
+  --secondary-color: #c37611e6;
+  --secondary-variant: #baa541;
+  --nav-color: #85853f;
+  --background-color: rgb(40, 37, 37);
+  --background-variant: rgb(173, 169, 169);
+  --text-color: rgb(229, 225, 202);
+}
+
+body {
+  position: relative;
+  height: 100vh;
+}
+
+/* NAVBAR */
+nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 1.5rem;
+  background-color: var(--nav-color);
+}
+
+nav h1 {
+  font-family: Comfortaa, sans-serif;
+  font-weight: 700;
+  font-size: 2rem;
+}
+
+/* SWAP THEMES */
+.theme-toggle-button {
+  color: var(--btn-text-color);
+  background-color: var(--accent-color);
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5em 1em;
+  border-radius: 0.3em;
+  transition: var(--transition-delay);
+  font-weight: bold;
+  font-family: mukta, sans-serif;
+  font-size: 1rem;
+}
+
+.theme-toggle-button:hover,
+.theme-toggle-button:focus {
+  transform: scale(1.1);
+}
+
+/* TODO LIST CONTAINER */
+.container {
+  width: 50%;
+  background-color: var(--accent-variant);
+  margin: 0 auto;
+  margin-top: 2rem;
+  border-radius: 0.2rem;
+  box-shadow: var(--box-shadow);
+  padding: 0.5rem;
+}
+
+input,
+button {
+  outline: none;
+  border: none;
+}
+
+form {
+  display: flex;
+  margin-bottom: 0.5rem;
+}
+
+#todo-input {
+  padding: 0.2rem;
+  flex: 1 1 0%;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+form button {
+  padding: 1rem;
+  background-color: var(--background-variant);
+}
+
+form button:hover,
+form button:focus {
+  transform: scale(1.1);
+}
+
+/* TODO LIST */
+#list {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+}
+
+#list li {
+  background-color: var(--secondary-color);
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem;
+  margin-bottom: 0.3rem;
+  border-radius: 0.2rem;
+  font-family: mukta, sans-serif;
+  font-size: 1.2rem;
+}
+
+#list li button {
+  padding: 0.2rem;
+  background-color: var(--accent-color);
+  border-radius: 1rem;
+}
+
+#list li button:hover {
+  opacity: 0.7;
+  transform: scale(1.1);
+}
+
+/* STYLE THE COMPLETED TODO BY TOGGLING DONE CLASS */
+
+.done {
+  text-decoration: line-through;
+  background-color: var(--secondary-variant) !important;
+  color: var(--gray);
+}
+
+/* CONFIRMATION ON ADDING TODO */
+.save-confirmed {
+  background: white;
+  padding: 8px 16px;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
+  font-family: cursive;
+  color: var(--secondary-color);
+}
+
+.hidden {
+  display: none;
+}
+
+/*SUMMARY OF TODO APP  */
+#summary {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  margin: 1rem;
+  background-color: whitesmoke;
+  font-size: 1rem;
+  border-radius: 1rem;
+  color: var(--secondary-color);
+}
+
+@media screen and (max-width: 800px) {
+  .container {
+    width: 80%;
+  }
+}
